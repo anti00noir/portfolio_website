@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kabelo Rabalao — Software Engineer</title>
+  <meta name="description" content="Portfolio of Kabelo Rabalao, Software Engineering Student specialising in Game & Systems Development." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --accent:        #00e5a0;
+      --accent-dim:    #00e5a033;
+      --accent-glow:   0 0 18px #00e5a066;
+      --bg-primary:    #080b10;
+      --bg-secondary:  #0d1117;
+      --bg-card:       #111820;
+      --bg-card-hover: #16202c;
+      --border:        #1e2d3d;
+      --border-light:  #243447;
+      --text-primary:  #e6edf3;
+      --text-secondary:#8b949e;
+      --text-muted:    #4d5966;
+      --nav-bg:        rgba(8,11,16,0.88);
+      --radius-sm:  6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --font-display: 'Bricolage Grotesque', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
+      --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+    }
+    [data-theme="light"] {
+      --bg-primary:    #f4f6f9;
+      --bg-secondary:  #ffffff;
+      --bg-card:       #ffffff;
+      --bg-card-hover: #f0f4f8;
+      --border:        #d0d9e4;
+      --border-light:  #e2e8f0;
+      --text-primary:  #0f1923;
+      --text-secondary:#4a5568;
+      --text-muted:    #94a3b8;
+      --nav-bg:        rgba(244,246,249,0.9);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      line-height: 1.7;
+      overflow-x: hidden;
+      transition: background-color 0.4s, color 0.4s;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: radial-gradient(var(--text-muted) 1px, transparent 1px);
+      background-size: 36px 36px;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
+    section, nav, footer { position: relative; z-index: 1; }
+    ::selection { background: var(--accent); color: #080b10; }
+    a { color: var(--accent); text-decoration: none; transition: opacity var(--transition); }
+    a:hover { opacity: 0.8; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 99px; }
+
+    /* Typography */
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .display-lg {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--accent);
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 96px 0; }
+    .section-heading { margin-bottom: 52px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 999;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px) saturate(180%);
+      -webkit-backdrop-filter: blur(14px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.4s, border-color 0.4s;
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    }
+    .nav-logo { font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem; color: var(--text-primary); letter-spacing: 0.04em; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-secondary); position: relative; padding-bottom: 4px;
+      transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 1px; background: var(--accent);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); opacity: 1; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .theme-btn {
+      background: none; border: 1px solid var(--border); border-radius: var(--radius-sm);
+      cursor: pointer; padding: 6px 10px; display: flex; align-items: center; justify-content: center;
+      color: var(--text-secondary); font-size: 1rem;
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+    }
+    .theme-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+    .theme-btn .icon-light { display: none; }
+    .theme-btn .icon-dark  { display: block; }
+    [data-theme="light"] .theme-btn .icon-light { display: block; }
+    [data-theme="light"] .theme-btn .icon-dark  { display: none; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-primary); border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-drawer {
+      display: none; flex-direction: column;
+      background: var(--bg-secondary); border-top: 1px solid var(--border);
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    }
+    .nav-drawer.open { max-height: 400px; }
+    .nav-drawer a {
+      display: block; padding: 14px 24px;
+      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-secondary); border-bottom: 1px solid var(--border);
+    }
+    .nav-drawer a:hover { color: var(--accent); background: var(--accent-dim); }
+
+    /* HERO */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; overflow: hidden; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent-dim); border: 1px solid var(--accent); color: var(--accent);
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 99px; margin-bottom: 24px;
+      animation: fadeSlideUp 0.6s ease both;
+    }
+    .hero-badge::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent); animation: pulse 2s infinite;
+    }
+    .hero-name { animation: fadeSlideUp 0.7s 0.1s ease both; }
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2.2vw, 1.3rem); font-weight: 600;
+      color: var(--text-secondary); margin-top: 12px; margin-bottom: 20px;
+      animation: fadeSlideUp 0.7s 0.2s ease both;
+    }
+    .hero-summary {
+      color: var(--text-secondary); font-size: 0.88rem;
+      max-width: 500px; line-height: 1.8; margin-bottom: 36px;
+      animation: fadeSlideUp 0.7s 0.3s ease both;
+    }
+    .hero-location {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; color: var(--text-muted); margin-bottom: 16px;
+    }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeSlideUp 0.7s 0.4s ease both; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: var(--radius-sm);
+      font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer; transition: all var(--transition); border: none; text-decoration: none;
+    }
+    .btn-primary { background: var(--accent); color: #080b10; box-shadow: var(--accent-glow); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 28px #00e5a099; opacity: 1; }
+    .btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border-light); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); transform: translateY(-2px); opacity: 1; }
+    .hero-visual { animation: fadeSlideUp 0.9s 0.2s ease both; }
+    .terminal-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-md); overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+    .terminal-bar {
+      display: flex; align-items: center; gap: 7px;
+      padding: 12px 16px; background: var(--bg-secondary); border-bottom: 1px solid var(--border);
+    }
+    .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-red { background: #ff5f57; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #28c941; }
+    .terminal-title { flex: 1; text-align: center; font-size: 0.72rem; color: var(--text-muted); }
+    .terminal-body { padding: 22px 24px; font-size: 0.82rem; color: var(--text-secondary); min-height: 260px; }
+    .terminal-line { display: block; margin-bottom: 4px; opacity: 0; }
+    .terminal-line.visible { opacity: 1; }
+    .t-prompt { color: var(--accent); }
+    .t-cmd { color: var(--text-primary); }
+    .t-comment { color: var(--text-muted); font-style: italic; }
+    .t-value { color: #79c0ff; }
+    .t-string { color: #a5d6ff; }
+    .t-key { color: var(--accent); }
+    .cursor {
+      display: inline-block; width: 8px; height: 1.1em;
+      background: var(--accent); vertical-align: text-bottom;
+      animation: blink 1.1s step-end infinite;
+    }
+
+    /* ABOUT */
+    #about { background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-text p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.85; margin-bottom: 18px; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .stat-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 22px 20px; transition: border-color var(--transition), transform var(--transition);
+    }
+    .stat-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .stat-number { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+
+    /* EDUCATION */
+    #education .edu-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent); border-radius: var(--radius-md);
+      padding: 32px 36px; max-width: 680px;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    #education .edu-card:hover { box-shadow: var(--accent-glow); transform: translateY(-3px); }
+    .edu-degree { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+    .edu-institution { color: var(--accent); font-size: 0.84rem; letter-spacing: 0.06em; }
+    .edu-meta { display: flex; gap: 20px; margin-top: 14px; }
+    .edu-pill {
+      background: var(--accent-dim); color: var(--accent);
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 99px;
+    }
+
+    /* SKILLS */
+    #skills { background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+    .skill-group {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 26px 24px;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .skill-group:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .skill-group-title {
+      font-family: var(--font-display); font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-icon {
+      width: 22px; height: 22px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--ic-dim, rgba(0,229,160,0.12));
+      border-radius: 4px;
+      color: var(--ic, var(--accent));
+      flex-shrink: 0;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .skill-icon svg { width: 13px; height: 13px; display: block; }
+    .skill-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--bg-primary); border: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 0.74rem; font-weight: 400;
+      padding: 6px 12px 6px 8px; border-radius: var(--radius-sm);
+      cursor: default; transition: all var(--transition);
+      font-family: var(--font-mono); letter-spacing: 0.01em;
+    }
+    .skill-tag:hover {
+      border-color: var(--ic, var(--accent));
+      color: var(--ic, var(--accent));
+      background: var(--ic-dim, var(--accent-dim));
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+    .skill-tag:hover .skill-icon {
+      background: var(--ic-dim, rgba(0,229,160,0.2));
+      transform: scale(1.08);
+    }
+
+    /* PROJECTS */
+    #projects { background: var(--bg-primary); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 26px; }
+    .project-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 16px 48px rgba(0,229,160,0.1); }
+    .project-header {
+      padding: 28px 28px 20px; border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--bg-card-hover) 0%, var(--bg-card) 100%);
+    }
+    .project-number { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .project-name { font-family: var(--font-display); font-size: 1.22rem; font-weight: 700; margin-bottom: 14px; line-height: 1.2; }
+    .project-tech-row { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tech-badge {
+      background: var(--bg-primary); border: 1px solid var(--border-light);
+      color: var(--text-muted); font-family: var(--font-mono);
+      font-size: 0.68rem; letter-spacing: 0.04em;
+      padding: 4px 10px; border-radius: 4px; transition: all var(--transition);
+    }
+    .project-card:hover .tech-badge { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+    .project-body { padding: 24px 28px 28px; flex: 1; }
+    .project-achievements { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .project-achievements li { display: flex; gap: 12px; font-size: 0.83rem; color: var(--text-secondary); line-height: 1.65; }
+    .project-achievements li::before { content: '▹'; color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+
+    /* CONTACT */
+    #contact { background: var(--bg-secondary); border-top: 1px solid var(--border); text-align: center; }
+    .contact-inner { max-width: 640px; margin: 0 auto; }
+    .contact-inner .display-lg { margin-bottom: 18px; }
+    .contact-inner p { color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 40px; line-height: 1.8; }
+    .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 13px 24px; border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light); font-size: 0.78rem;
+      font-family: var(--font-mono); letter-spacing: 0.06em;
+      color: var(--text-secondary); transition: all var(--transition); background: var(--bg-card);
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); transform: translateY(-2px); opacity: 1; }
+    .contact-link svg { transition: transform var(--transition); }
+    .contact-link:hover svg { transform: scale(1.15); }
+
+    /* FOOTER */
+    footer { background: var(--bg-primary); border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; }
+    footer p { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; }
+    footer span { color: var(--accent); }
+
+    /* ANIMATIONS */
+    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner   { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual  { order: -1; }
+      .about-grid   { grid-template-columns: 1fr; gap: 48px; }
+      .projects-grid{ grid-template-columns: 1fr; }
+      .nav-links    { display: none; }
+      .hamburger    { display: flex; }
+      .nav-drawer   { display: flex; }
+    }
+    @media (max-width: 560px) {
+      section { padding: 72px 0; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .hero-cta { flex-direction: column; }
+      .btn { justify-content: center; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">kr<span>.</span>dev</span>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-drawer" id="nav-drawer">
+      <a href="#about"     onclick="closeDrawer()">About</a>
+      <a href="#education" onclick="closeDrawer()">Education</a>
+      <a href="#skills"    onclick="closeDrawer()">Skills</a>
+      <a href="#projects"  onclick="closeDrawer()">Projects</a>
+      <a href="#contact"   onclick="closeDrawer()">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge">Available for opportunities</div>
+          <p class="hero-location">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Johannesburg, Gauteng
+          </p>
+          <h1 class="display-xl hero-name">Kabelo<br/>Rabalao</h1>
+          <p class="hero-tagline">Software Engineering Student &mdash; Game &amp; Systems Dev</p>
+          <p class="hero-summary">I engineer robust systems from the ground up &mdash; multithreaded servers, CLI tooling, and collaborative software that ships. Passionate about clean architecture, concurrency challenges, and the intersection of game design with low-level systems programming.</p>
+          <div class="hero-cta">
+            <a href="mailto:kabelorabalao.dev@outlook.com" class="btn btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Get in touch
+            </a>
+            <a href="#projects" class="btn btn-outline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              View projects
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="terminal-card">
+            <div class="terminal-bar">
+              <div class="terminal-dot dot-red"></div>
+              <div class="terminal-dot dot-yellow"></div>
+              <div class="terminal-dot dot-green"></div>
+              <span class="terminal-title">~/kabelo &mdash; bash</span>
+            </div>
+            <div class="terminal-body" id="terminal-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="section-label">About me</p>
+          <h2 class="display-lg" style="margin-bottom:24px;">Building things<br/>that matter</h2>
+          <p>I'm a software engineering student with a deep focus on systems-level programming and game development. I thrive in environments where performance, correctness, and collaboration intersect.</p>
+          <p>My work spans backend infrastructure, CLI tooling, and protocol design. I care about code that is readable, testable, and built to last &mdash; not just code that runs.</p>
+        </div>
+        <div class="about-stats reveal">
+          <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Shipped projects</div></div>
+          <div class="stat-card"><div class="stat-number">20+</div><div class="stat-label">Concurrent clients handled</div></div>
+          <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Agile team size</div></div>
+          <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">CLI command modules</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label">Education</p>
+        <h2 class="display-lg">Academic Foundation</h2>
+      </div>
+      <div class="reveal">
+        <div class="edu-card">
+          <div class="edu-degree">Bachelor of Science in Software Engineering</div>
+          <div class="edu-institution">WeThinkCode_ &mdash; Johannesburg, South Africa</div>
+          <div class="edu-meta">
+            <span class="edu-pill">In Progress</span>
+            <span class="edu-pill">Full-Time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label">Technical Skills</p>
+        <h2 class="display-lg">My Toolkit</h2>
+      </div>
+      <div class="skills-grid">
+
+        <!-- LANGUAGES -->
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Languages</div>
+          <div class="skill-tags">
+
+            <!-- Python -->
+            <span class="skill-tag" style="--ic:#4b8bbe;--ic-dim:rgba(75,139,190,0.15)">
+              <span class="skill-icon" style="--ic:#4b8bbe;--ic-dim:rgba(75,139,190,0.15)">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 1C5.8 1 4.3 2 4.3 3.2V5h3.5v.5H2.8C1.5 5.5.5 6.6.5 8s1 2.5 2.3 2.5H4V9c0-.7.6-1.3 1.3-1.3h4.8c.7 0 1.3-.6 1.3-1.3V3.2C11.4 2 9.9 1 8 1zm-1.2 1.6c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z" fill="#4b8bbe"/>
+                  <path d="M8 15c2.2 0 3.7-1 3.7-2.2V11H8.2v-.5h5.1c1.3 0 2.2-1.1 2.2-2.5s-1-2.5-2.2-2.5H12v1.5c0 .7-.6 1.3-1.3 1.3H5.9c-.7 0-1.3.6-1.3 1.3v4.2C4.6 14 6.1 15 8 15zm1.2-1.6c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7z" fill="#ffd43b"/>
+                </svg>
+              </span>
+              Python
+            </span>
+
+            <!-- Java -->
+            <span class="skill-tag" style="--ic:#f89820;--ic-dim:rgba(248,152,32,0.15)">
+              <span class="skill-icon" style="--ic:#f89820;--ic-dim:rgba(248,152,32,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.8 10.7s-.5.3.4.4c1.1.1 1.7.1 3-.1 0 0 .3.2.8.3-2.8 1.2-6.3-.1-4.2-.6z" fill="#f89820"/>
+                  <path d="M5.4 9.1s-.6.5.6.6c1.6.1 2.8.1 4.9-.3 0 0 .2.3.6.4-4.3 1.2-9.1-.1-6.1-.7z" fill="#f89820"/>
+                  <path d="M8.2 6.3c.9 1-.3 1.8-.3 1.8s2.2-1.1 1.2-2.5C8.2 4.3 7.4 3.6 9.8 2.2 7.3 3.6 6.3 5 8.2 6.3z" fill="#f89820"/>
+                  <path d="M11 11.2s.4.3-.5.6c-1.6.5-6.7.6-8.1-.1-.5-.2.5-.5.8-.6h.4c-.5-.3-3.1.6-1.3 1 5 .9 9-.5 8.7-.9z" fill="#f89820"/>
+                  <path d="M5.8 7.9s-2.5.6-.9.8c.7.1 2.1.1 3.4 0 1-.1 2.2-.3 2.2-.3s-.2.1-.4.2c-1.7.4-5 .2-4.1-.2.9-.3.8-.4.8-.4l-.9-.1z" fill="#f89820"/>
+                  <path d="M10.2 10.2s1.8.9-2 1.2c-1.2.1-2.9 0-3.8-.3-.4-.1-.3-.3 0-.4.3-.1.4-.1.4-.1-.4-.2-1-.4.1-.6 3-.1 4.5.1 5.3.2z" fill="#ffd43b"/>
+                </svg>
+              </span>
+              Java
+            </span>
+
+            <!-- C -->
+            <span class="skill-tag" style="--ic:#5c9bd6;--ic-dim:rgba(92,155,214,0.15)">
+              <span class="skill-icon" style="--ic:#5c9bd6;--ic-dim:rgba(92,155,214,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 5.5A5.5 5.5 0 1 0 13 10.5" stroke="#5c9bd6" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+              C
+            </span>
+
+            <!-- SQL -->
+            <span class="skill-tag" style="--ic:#00b4d8;--ic-dim:rgba(0,180,216,0.15)">
+              <span class="skill-icon" style="--ic:#00b4d8;--ic-dim:rgba(0,180,216,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="8" cy="4.5" rx="5" ry="1.8" stroke="#00b4d8" stroke-width="1.2"/>
+                  <line x1="3" y1="4.5" x2="3" y2="11.5" stroke="#00b4d8" stroke-width="1.2"/>
+                  <line x1="13" y1="4.5" x2="13" y2="11.5" stroke="#00b4d8" stroke-width="1.2"/>
+                  <ellipse cx="8" cy="11.5" rx="5" ry="1.8" stroke="#00b4d8" stroke-width="1.2"/>
+                  <path d="M3 8c0 .9 2.2 1.6 5 1.6s5-.7 5-1.6" stroke="#00b4d8" stroke-width="1" stroke-dasharray="2 1.5"/>
+                </svg>
+              </span>
+              SQL
+            </span>
+
+            <!-- Bash -->
+            <span class="skill-tag" style="--ic:#00e5a0;--ic-dim:rgba(0,229,160,0.12)">
+              <span class="skill-icon" style="--ic:#00e5a0;--ic-dim:rgba(0,229,160,0.12)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 5l4 3-4 3" stroke="#00e5a0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="8.5" y1="11" x2="14" y2="11" stroke="#00e5a0" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </span>
+              Bash / Shell
+            </span>
+
+          </div>
+        </div>
+
+        <!-- FRAMEWORKS & TOOLS -->
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Frameworks &amp; Tools</div>
+          <div class="skill-tags">
+
+            <!-- Google Calendar API -->
+            <span class="skill-tag" style="--ic:#4285f4;--ic-dim:rgba(66,133,244,0.15)">
+              <span class="skill-icon" style="--ic:#4285f4;--ic-dim:rgba(66,133,244,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="3" width="12" height="11" rx="1.2" stroke="#4285f4" stroke-width="1.2"/>
+                  <line x1="2" y1="6.5" x2="14" y2="6.5" stroke="#4285f4" stroke-width="1.2"/>
+                  <line x1="5.5" y1="1.5" x2="5.5" y2="5" stroke="#4285f4" stroke-width="1.4" stroke-linecap="round"/>
+                  <line x1="10.5" y1="1.5" x2="10.5" y2="5" stroke="#4285f4" stroke-width="1.4" stroke-linecap="round"/>
+                  <rect x="5" y="8.5" width="2.5" height="2" rx=".4" fill="#4285f4"/>
+                  <rect x="8.5" y="8.5" width="2.5" height="2" rx=".4" fill="#4285f4" opacity=".5"/>
+                  <rect x="5" y="11" width="2.5" height="1.5" rx=".4" fill="#4285f4" opacity=".3"/>
+                </svg>
+              </span>
+              Google Calendar API
+            </span>
+
+            <!-- TCP / Sockets -->
+            <span class="skill-tag" style="--ic:#a78bfa;--ic-dim:rgba(167,139,250,0.15)">
+              <span class="skill-icon" style="--ic:#a78bfa;--ic-dim:rgba(167,139,250,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="3" cy="8" r="2" stroke="#a78bfa" stroke-width="1.2"/>
+                  <circle cx="13" cy="8" r="2" stroke="#a78bfa" stroke-width="1.2"/>
+                  <line x1="5" y1="8" x2="11" y2="8" stroke="#a78bfa" stroke-width="1.2"/>
+                  <circle cx="8" cy="4.5" r="1.4" fill="#a78bfa" opacity=".7"/>
+                  <line x1="8" y1="5.9" x2="8" y2="6.8" stroke="#a78bfa" stroke-width="1.1"/>
+                </svg>
+              </span>
+              TCP / Sockets
+            </span>
+
+            <!-- JSON -->
+            <span class="skill-tag" style="--ic:#fbbf24;--ic-dim:rgba(251,191,36,0.15)">
+              <span class="skill-icon" style="--ic:#fbbf24;--ic-dim:rgba(251,191,36,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 2C4.3 2 4 3 4 4.2V5.8c0 .9-.8 1.4-2 1.7C3.2 7.9 4 8.4 4 9.3v1.5C4 12 4.3 14 6 14" stroke="#fbbf24" stroke-width="1.3" stroke-linecap="round"/>
+                  <path d="M10 2c1.7 0 2 1 2 2.2v1.6c0 .9.8 1.4 2 1.7-1.2.4-2 .9-2 1.8v1.5C12 12 11.7 14 10 14" stroke="#fbbf24" stroke-width="1.3" stroke-linecap="round"/>
+                </svg>
+              </span>
+              JSON
+            </span>
+
+            <!-- Multithreading -->
+            <span class="skill-tag" style="--ic:#f97316;--ic-dim:rgba(249,115,22,0.15)">
+              <span class="skill-icon" style="--ic:#f97316;--ic-dim:rgba(249,115,22,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="2" y1="4" x2="10" y2="4" stroke="#f97316" stroke-width="1.3" stroke-linecap="round"/>
+                  <polyline points="9,2.5 11,4 9,5.5" stroke="#f97316" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="2" y1="8" x2="10" y2="8" stroke="#f97316" stroke-width="1.3" stroke-linecap="round"/>
+                  <polyline points="9,6.5 11,8 9,9.5" stroke="#f97316" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="2" y1="12" x2="10" y2="12" stroke="#f97316" stroke-width="1.3" stroke-linecap="round"/>
+                  <polyline points="9,10.5 11,12 9,13.5" stroke="#f97316" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Multithreading
+            </span>
+
+            <!-- Linux CLI -->
+            <span class="skill-tag" style="--ic:#94a3b8;--ic-dim:rgba(148,163,184,0.15)">
+              <span class="skill-icon" style="--ic:#94a3b8;--ic-dim:rgba(148,163,184,0.15)">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="8" cy="4" rx="3" ry="2.8" fill="#94a3b8"/>
+                  <ellipse cx="8" cy="10" rx="3.5" ry="4.2" fill="#94a3b8"/>
+                  <ellipse cx="8" cy="10" rx="2" ry="3" fill="#080b10" opacity=".6"/>
+                  <circle cx="6.8" cy="3.5" r=".5" fill="#080b10"/>
+                  <circle cx="9.2" cy="3.5" r=".5" fill="#080b10"/>
+                  <path d="M7.3 4.8h1.4l-.7.7z" fill="#f97316"/>
+                  <line x1="5.5" y1="13" x2="4.3" y2="15" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
+                  <line x1="10.5" y1="13" x2="11.7" y2="15" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              Linux CLI
+            </span>
+
+          </div>
+        </div>
+
+        <!-- VERSION CONTROL -->
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Version Control &amp; Collaboration</div>
+          <div class="skill-tags">
+
+            <!-- Git -->
+            <span class="skill-tag" style="--ic:#f05033;--ic-dim:rgba(240,80,51,0.15)">
+              <span class="skill-icon" style="--ic:#f05033;--ic-dim:rgba(240,80,51,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="4.5" cy="3.5" r="1.7" stroke="#f05033" stroke-width="1.2"/>
+                  <circle cx="4.5" cy="12.5" r="1.7" stroke="#f05033" stroke-width="1.2"/>
+                  <circle cx="11.5" cy="7" r="1.7" stroke="#f05033" stroke-width="1.2"/>
+                  <line x1="4.5" y1="5.2" x2="4.5" y2="10.8" stroke="#f05033" stroke-width="1.2"/>
+                  <path d="M4.5 6C4.5 7.5 11.5 7 11.5 7" stroke="#f05033" stroke-width="1.2" fill="none"/>
+                </svg>
+              </span>
+              Git
+            </span>
+
+            <!-- GitHub -->
+            <span class="skill-tag" style="--ic:#c9d1d9;--ic-dim:rgba(201,209,217,0.12)">
+              <span class="skill-icon" style="--ic:#c9d1d9;--ic-dim:rgba(201,209,217,0.12)">
+                <svg viewBox="0 0 16 16" fill="#c9d1d9" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 .5A7.5 7.5 0 0 0 .5 8c0 3.31 2.15 6.12 5.13 7.11.37.07.5-.16.5-.36v-1.26c-2.06.45-2.49-1.34-2.49-1.34-.34-.87-.83-1.1-.83-1.1-.68-.46.05-.45.05-.45.75.05 1.15.77 1.15.77.67 1.15 1.76.82 2.19.63.07-.49.26-.82.47-1.01-1.67-.19-3.43-.84-3.43-3.71 0-.82.29-1.49.77-2.02-.08-.19-.33-.95.07-1.98 0 0 .63-.2 2.06.77A7.15 7.15 0 0 1 8 4.84c.64 0 1.28.08 1.88.24 1.42-.97 2.05-.77 2.05-.77.4 1.03.15 1.79.07 1.98.48.53.77 1.2.77 2.02 0 2.88-1.76 3.52-3.44 3.7.27.24.51.7.51 1.4v2.08c0 .2.13.44.51.36A7.5 7.5 0 0 0 15.5 8 7.5 7.5 0 0 0 8 .5z"/>
+                </svg>
+              </span>
+              GitHub
+            </span>
+
+            <!-- Miro -->
+            <span class="skill-tag" style="--ic:#e8c84a;--ic-dim:rgba(232,200,74,0.15)">
+              <span class="skill-icon" style="--ic:#e8c84a;--ic-dim:rgba(232,200,74,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="#e8c84a" stroke-width="1.2"/>
+                  <rect x="4" y="4.5" width="3" height="2.8" rx=".6" fill="#e8c84a" opacity=".9"/>
+                  <rect x="9" y="4.5" width="3" height="2.8" rx=".6" fill="#e8c84a" opacity=".5"/>
+                  <rect x="4" y="9" width="3" height="2" rx=".6" fill="#e8c84a" opacity=".4"/>
+                  <rect x="9" y="9" width="3" height="2" rx=".6" fill="#e8c84a" opacity=".75"/>
+                </svg>
+              </span>
+              Miro
+            </span>
+
+            <!-- Agile / Scrum -->
+            <span class="skill-tag" style="--ic:#60a5fa;--ic-dim:rgba(96,165,250,0.15)">
+              <span class="skill-icon" style="--ic:#60a5fa;--ic-dim:rgba(96,165,250,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.5 8A5.5 5.5 0 0 0 4 4.5" stroke="#60a5fa" stroke-width="1.3" stroke-linecap="round"/>
+                  <polyline points="2.2,3.5 4,4.5 4.2,2.5" stroke="#60a5fa" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2.5 8a5.5 5.5 0 0 0 9.5 3.5" stroke="#60a5fa" stroke-width="1.3" stroke-linecap="round"/>
+                  <polyline points="13.8,12.5 12,11.5 11.8,13.5" stroke="#60a5fa" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Agile / Scrum
+            </span>
+
+          </div>
+        </div>
+
+        <!-- DEVELOPMENT PRACTICES -->
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Development Practices</div>
+          <div class="skill-tags">
+
+            <!-- TDD -->
+            <span class="skill-tag" style="--ic:#34d399;--ic-dim:rgba(52,211,153,0.15)">
+              <span class="skill-icon" style="--ic:#34d399;--ic-dim:rgba(52,211,153,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 2v4.5L3 11c-.5 1 .2 2.5 1.5 2.5h7c1.3 0 2-1.5 1.5-2.5L10 6.5V2" stroke="#34d399" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="5.5" y1="2" x2="10.5" y2="2" stroke="#34d399" stroke-width="1.3" stroke-linecap="round"/>
+                  <path d="M6 9.5l1.5 1.5 3-3" stroke="#34d399" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              TDD
+            </span>
+
+            <!-- OOP -->
+            <span class="skill-tag" style="--ic:#c084fc;--ic-dim:rgba(192,132,252,0.15)">
+              <span class="skill-icon" style="--ic:#c084fc;--ic-dim:rgba(192,132,252,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5.5" y="1" width="5" height="3" rx=".8" stroke="#c084fc" stroke-width="1.2"/>
+                  <rect x="1" y="11.5" width="4.5" height="3" rx=".8" stroke="#c084fc" stroke-width="1.2"/>
+                  <rect x="10.5" y="11.5" width="4.5" height="3" rx=".8" stroke="#c084fc" stroke-width="1.2"/>
+                  <line x1="8" y1="4" x2="8" y2="7" stroke="#c084fc" stroke-width="1.1"/>
+                  <line x1="3.25" y1="7" x2="12.75" y2="7" stroke="#c084fc" stroke-width="1.1"/>
+                  <line x1="3.25" y1="7" x2="3.25" y2="11.5" stroke="#c084fc" stroke-width="1.1"/>
+                  <line x1="12.75" y1="7" x2="12.75" y2="11.5" stroke="#c084fc" stroke-width="1.1"/>
+                </svg>
+              </span>
+              OOP
+            </span>
+
+            <!-- Clean Architecture -->
+            <span class="skill-tag" style="--ic:#22d3ee;--ic-dim:rgba(34,211,238,0.15)">
+              <span class="skill-icon" style="--ic:#22d3ee;--ic-dim:rgba(34,211,238,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="8" cy="8" r="6.5" stroke="#22d3ee" stroke-width="1.1"/>
+                  <circle cx="8" cy="8" r="4.2" stroke="#22d3ee" stroke-width="1.1"/>
+                  <circle cx="8" cy="8" r="2" stroke="#22d3ee" stroke-width="1.1"/>
+                  <circle cx="8" cy="8" r=".7" fill="#22d3ee"/>
+                </svg>
+              </span>
+              Clean Architecture
+            </span>
+
+            <!-- Concurrency Design -->
+            <span class="skill-tag" style="--ic:#fb923c;--ic-dim:rgba(251,146,60,0.15)">
+              <span class="skill-icon" style="--ic:#fb923c;--ic-dim:rgba(251,146,60,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="2" y1="5.5" x2="10" y2="5.5" stroke="#fb923c" stroke-width="1.4" stroke-linecap="round"/>
+                  <polyline points="9,3.5 11,5.5 9,7.5" stroke="#fb923c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="14" y1="10.5" x2="6" y2="10.5" stroke="#fb923c" stroke-width="1.4" stroke-linecap="round"/>
+                  <polyline points="7,8.5 5,10.5 7,12.5" stroke="#fb923c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Concurrency Design
+            </span>
+
+            <!-- Protocol Design -->
+            <span class="skill-tag" style="--ic:#818cf8;--ic-dim:rgba(129,140,248,0.15)">
+              <span class="skill-icon" style="--ic:#818cf8;--ic-dim:rgba(129,140,248,0.15)">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="4" width="4" height="3" rx=".6" stroke="#818cf8" stroke-width="1.2"/>
+                  <rect x="11" y="4" width="4" height="3" rx=".6" stroke="#818cf8" stroke-width="1.2"/>
+                  <rect x="1" y="9" width="4" height="3" rx=".6" stroke="#818cf8" stroke-width="1.2"/>
+                  <rect x="11" y="9" width="4" height="3" rx=".6" stroke="#818cf8" stroke-width="1.2"/>
+                  <line x1="5" y1="5.5" x2="11" y2="5.5" stroke="#818cf8" stroke-width="1.1"/>
+                  <polyline points="9.5,4.5 11,5.5 9.5,6.5" stroke="#818cf8" stroke-width="1.1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="11" y1="10.5" x2="5" y2="10.5" stroke="#818cf8" stroke-width="1.1"/>
+                  <polyline points="6.5,9.5 5,10.5 6.5,11.5" stroke="#818cf8" stroke-width="1.1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Protocol Design
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-label">Projects</p>
+        <h2 class="display-lg">What I've Built</h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-number">Project 01</div>
+            <div class="project-name">Coding Clinic Booking System</div>
+            <div class="project-tech-row">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Google Calendar API</span>
+              <span class="tech-badge">JSON</span>
+              <span class="tech-badge">Git</span>
+              <span class="tech-badge">Linux CLI</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <ul class="project-achievements">
+              <li>Built a CLI tool that syncs Google Calendar with a local JSON cache, cutting API calls through a 7-day expiry strategy and hidden config storage.</li>
+              <li>Implemented double-booking prevention for students and volunteers using atomic updates applied to both local and remote calendar state simultaneously.</li>
+              <li>Delivered 6 command modules &mdash; <code>book</code>, <code>cancel</code>, <code>view</code> &mdash; with Linux-compatible output piping and integrated help documentation.</li>
+              <li>Collaborated in a 5-person Agile team using Git and Miro, maintaining a cadence of shipping working software every week.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-number">Project 02</div>
+            <div class="project-name">Robot World Client&#8209;Server System</div>
+            <div class="project-tech-row">
+              <span class="tech-badge">Java</span>
+              <span class="tech-badge">Sockets</span>
+              <span class="tech-badge">Multithreading</span>
+              <span class="tech-badge">JSON</span>
+              <span class="tech-badge">TCP/IP</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <ul class="project-achievements">
+              <li>Engineered a multithreaded TCP server capable of managing 20+ concurrent robot clients, maintaining thread-safe world state including dynamic obstacle placement.</li>
+              <li>Designed a JSON-based command/response messaging protocol enabling seamless cross-compatible communication between any client and the central server.</li>
+              <li>Built a zero-knowledge client that constructs its entire understanding of the world exclusively from server responses &mdash; no shared state.</li>
+              <li>Applied <code>synchronized</code> concurrency controls to eliminate race conditions during simultaneous multi-robot state updates.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner reveal">
+        <p class="section-label" style="justify-content:center;">Contact</p>
+        <h2 class="display-lg">Let's Work Together</h2>
+        <p>I'm actively looking for internship and junior engineering opportunities where I can contribute to meaningful systems &mdash; and keep learning fast. Don't hesitate to reach out.</p>
+        <div class="contact-links">
+          <a href="mailto:kabelorabalao.dev@outlook.com" class="contact-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            kabelorabalao.dev@outlook.com
+          </a>
+          <a href="#" class="contact-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="#" class="contact-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Designed &amp; built by <span>Kabelo Rabalao</span> &mdash; &copy; <span id="year"></span></p>
+  </footer>
+
+  <script>
+    /* Theme */
+    const root = document.documentElement;
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      root.setAttribute('data-theme', root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+
+    /* Hamburger */
+    const hamburger = document.getElementById('hamburger');
+    const drawer    = document.getElementById('nav-drawer');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      drawer.classList.toggle('open');
+    });
+    function closeDrawer() {
+      hamburger.classList.remove('open');
+      drawer.classList.remove('open');
+    }
+
+    /* Active nav */
+    const sections   = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('#nav-links a');
+    function updateNav() {
+      let id = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 90) id = s.id; });
+      navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    /* Reveal */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const i = [...e.target.parentElement.children].indexOf(e.target);
+          setTimeout(() => e.target.classList.add('in-view'), i * 60);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* Terminal */
+    const lines = [
+      '<span class="t-prompt">$</span> <span class="t-cmd">whoami</span>',
+      '<span class="t-value">kabelo_rabalao</span>',
+      '',
+      '<span class="t-prompt">$</span> <span class="t-cmd">cat</span> <span class="t-string">profile.json</span>',
+      '{',
+      '&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-string">"Software Eng. Student"</span>,',
+      '&nbsp;&nbsp;<span class="t-key">"focus"</span>: <span class="t-string">"Game &amp; Systems Dev"</span>,',
+      '&nbsp;&nbsp;<span class="t-key">"stack"</span>: [<span class="t-string">"Python"</span>, <span class="t-string">"Java"</span>, <span class="t-string">"C"</span>],',
+      '&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-string">"Open to work \uD83D\uDE80"</span>',
+      '}',
+      '',
+      '<span class="t-prompt">$</span> <span class="t-cmd">git log</span> <span class="t-comment">--oneline</span>',
+      '<span class="t-value">a3f2b1c</span> feat: multithreaded TCP robot server',
+      '<span class="t-value">d91e0fa</span> fix: prevent double-booking race condition',
+      '<span class="t-value">7bc44d2</span> feat: JSON protocol + zero-knowledge client',
+      '',
+      '<span class="t-prompt">$</span> <span class="t-cmd">echo</span> <span class="t-string">"Let\'s build something great."</span>',
+      "<span class=\"t-value\">Let's build something great.</span>",
+      '<span class="t-prompt">$</span> <span class="cursor"></span>'
+    ];
+    const tb = document.getElementById('terminal-body');
+    (async () => {
+      await new Promise(r => setTimeout(r, 600));
+      for (const line of lines) {
+        const el = document.createElement('span');
+        el.className = 'terminal-line';
+        el.innerHTML = line || '&nbsp;';
+        tb.appendChild(el);
+        await new Promise(r => setTimeout(r, line ? 80 : 35));
+        el.classList.add('visible');
+        tb.scrollTop = tb.scrollHeight;
+      }
+    })();
+
+    /* Year */
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
