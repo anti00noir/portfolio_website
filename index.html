@@ -1,472 +1,330 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kabelo Rabalao — Software Engineer</title>
-  <meta name="description" content="Portfolio of Kabelo Rabalao, Software Engineering Student specialising in Game & Systems Development." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kabelo Rabalao — Software Engineer</title>
+    <meta name="description" content="Portfolio of Kabelo Rabalao, Software Engineering Student specialising in Game & Systems Development." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <span class="nav-logo">kr<span>.</span>dev</span>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">
-          <svg class="icon-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          <svg class="icon-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <div class="nav-drawer" id="nav-drawer">
-      <a href="#about"     onclick="closeDrawer()">About</a>
-      <a href="#education" onclick="closeDrawer()">Education</a>
-      <a href="#skills"    onclick="closeDrawer()">Skills</a>
-      <a href="#projects"  onclick="closeDrawer()">Projects</a>
-      <a href="#contact"   onclick="closeDrawer()">Contact</a>
-    </div>
-  </nav>
+    <div class="layout">
 
-  <!-- HERO SECTION -->
-  <section id="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-text">
-          <div class="hero-badge">Available for opportunities</div>
-          <p class="hero-location">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Johannesburg, Gauteng
-          </p>
-          <h1 class="display-xl hero-name">Kabelo<br/>Rabalao</h1>
-          <p class="hero-tagline">Software Engineering Student &mdash; Game &amp; Systems Dev</p>
-          <p class="hero-summary">I engineer robust systems from the ground up &mdash; multithreaded servers, CLI tooling, and collaborative software that ships. Passionate about clean architecture, concurrency challenges, and the intersection of game design with low-level systems programming.</p>
-          <div class="hero-cta">
-            <a href="mailto:kabelorabalao.dev@outlook.com" class="btn btn-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Get in touch
-            </a>
-            <a href="#projects" class="btn btn-outline">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              View projects
-            </a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="terminal-card">
-            <div class="terminal-bar">
-              <div class="terminal-dot dot-red"></div>
-              <div class="terminal-dot dot-yellow"></div>
-              <div class="terminal-dot dot-green"></div>
-              <span class="terminal-title">~/kabelo &mdash; bash</span>
+        <!-- ============================================================
+             SIDEBAR (desktop nav / identity rail)
+             ============================================================ -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brandmark">KR</div>
+
+            <h1 class="side-name">Kabelo<br/>Rabalao</h1>
+            <p class="side-tagline">Software Engineering Student — Game &amp; Systems Dev</p>
+
+            <p class="side-location">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Johannesburg, Gauteng
+            </p>
+
+            <div class="status-pill"><span class="status-dot"></span> Available for opportunities</div>
+
+            <nav>
+                <ul class="side-nav" id="side-nav">
+                    <li><a href="#about"><span class="n">01</span> About</a></li>
+                    <li><a href="#education"><span class="n">02</span> Education</a></li>
+                    <li><a href="#skills"><span class="n">03</span> Skills</a></li>
+                    <li><a href="#projects"><span class="n">04</span> Projects</a></li>
+                    <li><a href="#contact"><span class="n">05</span> Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="side-bottom">
+                <div class="stamp-wrap">
+                    <svg class="stamp-badge" viewBox="0 0 160 160" width="118" height="118" aria-hidden="true">
+                        <defs>
+                            <path id="stampCircle" d="M80,80 m-60,0 a60,60 0 1,1 120,0 a60,60 0 1,1 -120,0" />
+                        </defs>
+                        <circle cx="80" cy="80" r="76" fill="none" stroke="#385600" stroke-width="1" stroke-dasharray="1.5 4" opacity=".6"/>
+                        <circle cx="80" cy="80" r="60" fill="none" stroke="#385600" stroke-width="1.4"/>
+                        <text font-family="'Space Mono', monospace" font-size="8.6" letter-spacing="2.2" fill="#385600">
+                            <textPath href="#stampCircle" startOffset="2%">SYSTEMS ENGINEER • GAME DEVELOPER •</textPath>
+                        </text>
+                        <text x="80" y="88" text-anchor="middle" font-family="'Fraunces', serif" font-weight="700" font-size="26" fill="#a73330">KR</text>
+                    </svg>
+                </div>
+                <div class="side-social">
+                    <a href="mailto:kabelorabalao.dev@outlook.com" aria-label="Email">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kabelo-rabalao-576933277/" aria-label="LinkedIn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://github.com/anti00noir" aria-label="GitHub">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                </div>
             </div>
-            <div class="terminal-body" id="terminal-body"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </aside>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p class="section-label">About me</p>
-          <h2 class="display-lg" style="margin-bottom:24px;">Building things<br/>that matter</h2>
-          <p>I'm a software engineering student with a deep focus on systems-level programming and game development. I thrive in environments where performance, correctness, and collaboration intersect.</p>
-          <p>My work spans backend infrastructure, CLI tooling, and protocol design. I care about code that is readable, testable, and built to last &mdash; not just code that runs.</p>
-        </div>
-        <div class="about-stats reveal">
-          <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Shipped projects</div></div>
-          <div class="stat-card"><div class="stat-number">20+</div><div class="stat-label">Concurrent clients handled</div></div>
-          <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Agile team size</div></div>
-          <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">CLI command modules</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- ============================================================
+             MAIN
+             ============================================================ -->
+        <main class="main">
 
-  <!-- EDUCATION SECTION -->
-  <section id="education">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-label">Education</p>
-        <h2 class="display-lg">Academic Foundation</h2>
-      </div>
-      <div class="reveal">
-        <div class="edu-card">
-          <div class="edu-degree">Diploma in Software Engineering (NQF6)</div>
-          <div class="edu-institution">WeThinkCode_ &mdash; Johannesburg, South Africa</div>
-          <div class="edu-meta">
-            <span class="edu-pill">In Progress</span>
-            <span class="edu-pill">Full-Time</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS SECTION -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-label">Technical Skills</p>
-        <h2 class="display-lg">My Toolkit</h2>
-      </div>
-      <div class="skills-grid">
-        <!-- Languages Group -->
-        <div class="skill-group reveal">
-          <div class="skill-group-title">Languages</div>
-          <div class="skill-tags">
-            <span class="skill-tag" style="--ic:#4b8bbe;--ic-dim:rgba(75,139,190,0.15)">
-              <span class="skill-icon" style="--ic:#4b8bbe;--ic-dim:rgba(75,139,190,0.15)">
-                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 1C5.8 1 4.3 2 4.3 3.2V5h3.5v.5H2.8C1.5 5.5.5 6.6.5 8s1 2.5 2.3 2.5H4V9c0-.7.6-1.3 1.3-1.3h4.8c.7 0 1.3-.6 1.3-1.3V3.2C11.4 2 9.9 1 8 1zm-1.2 1.6c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z" fill="#4b8bbe"/>
-                  <path d="M8 15c2.2 0 3.7-1 3.7-2.2V11H8.2v-.5h5.1c1.3 0 2.2-1.1 2.2-2.5s-1-2.5-2.2-2.5H12v1.5c0 .7-.6 1.3-1.3 1.3H5.9c-.7 0-1.3.6-1.3 1.3v4.2C4.6 14 6.1 15 8 15zm1.2-1.6c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7z" fill="#ffd43b"/>
-                </svg>
-              </span>
-              Python
-            </span>
-            <span class="skill-tag" style="--ic:#f89820;--ic-dim:rgba(248,152,32,0.15)">
-              <span class="skill-icon" style="--ic:#f89820;--ic-dim:rgba(248,152,32,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5.8 10.7s-.5.3.4.4c1.1.1 1.7.1 3-.1 0 0 .3.2.8.3-2.8 1.2-6.3-.1-4.2-.6z" fill="#f89820"/>
-                  <path d="M5.4 9.1s-.6.5.6.6c1.6.1 2.8.1 4.9-.3 0 0 .2.3.6.4-4.3 1.2-9.1-.1-6.1-.7z" fill="#f89820"/>
-                  <path d="M8.2 6.3c.9 1-.3 1.8-.3 1.8s2.2-1.1 1.2-2.5C8.2 4.3 7.4 3.6 9.8 2.2 7.3 3.6 6.3 5 8.2 6.3z" fill="#f89820"/>
-                  <path d="M11 11.2s.4.3-.5.6c-1.6.5-6.7.6-8.1-.1-.5-.2.5-.5.8-.6h.4c-.5-.3-3.1.6-1.3 1 5 .9 9-.5 8.7-.9z" fill="#f89820"/>
-                  <path d="M5.8 7.9s-2.5.6-.9.8c.7.1 2.1.1 3.4 0 1-.1 2.2-.3 2.2-.3s-.2.1-.4.2c-1.7.4-5 .2-4.1-.2.9-.3.8-.4.8-.4l-.9-.1z" fill="#f89820"/>
-                  <path d="M10.2 10.2s1.8.9-2 1.2c-1.2.1-2.9 0-3.8-.3-.4-.1-.3-.3 0-.4.3-.1.4-.1.4-.1-.4-.2-1-.4.1-.6 3-.1 4.5.1 5.3.2z" fill="#ffd43b"/>
-                </svg>
-              </span>
-              Java
-            </span>
-            <span class="skill-tag" style="--ic:#5c9bd6;--ic-dim:rgba(92,155,214,0.15)">
-              <span class="skill-icon" style="--ic:#5c9bd6;--ic-dim:rgba(92,155,214,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13 5.5A5.5 5.5 0 1 0 13 10.5" stroke="#5c9bd6" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-              </span>
-              C
-            </span>
-            <span class="skill-tag" style="--ic:#00b4d8;--ic-dim:rgba(0,180,216,0.15)">
-              <span class="skill-icon" style="--ic:#00b4d8;--ic-dim:rgba(0,180,216,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="8" cy="4.5" rx="5" ry="1.8" stroke="#00b4d8" stroke-width="1.2"/>
-                  <line x1="3" y1="4.5" x2="3" y2="11.5" stroke="#00b4d8" stroke-width="1.2"/>
-                  <line x1="13" y1="4.5" x2="13" y2="11.5" stroke="#00b4d8" stroke-width="1.2"/>
-                  <ellipse cx="8" cy="11.5" rx="5" ry="1.8" stroke="#00b4d8" stroke-width="1.2"/>
-                  <path d="M3 8c0 .9 2.2 1.6 5 1.6s5-.7 5-1.6" stroke="#00b4d8" stroke-width="1" stroke-dasharray="2 1.5"/>
-                </svg>
-              </span>
-              SQL
-            </span>
-            <span class="skill-tag" style="--ic:#00e5a0;--ic-dim:rgba(0,229,160,0.12)">
-              <span class="skill-icon" style="--ic:#00e5a0;--ic-dim:rgba(0,229,160,0.12)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 5l4 3-4 3" stroke="#00e5a0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-                  <line x1="8.5" y1="11" x2="14" y2="11" stroke="#00e5a0" stroke-width="1.7" stroke-linecap="round"/>
-                </svg>
-              </span>
-              Bash / Shell
-            </span>
-          </div>
-        </div>
-        <!-- Frameworks & Tools Group -->
-        <div class="skill-group reveal">
-          <div class="skill-group-title">Frameworks &amp; Tools</div>
-          <div class="skill-tags">
-            <span class="skill-tag" style="--ic:#4285f4;--ic-dim:rgba(66,133,244,0.15)">
-              <span class="skill-icon" style="--ic:#4285f4;--ic-dim:rgba(66,133,244,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="2" y="3" width="12" height="11" rx="1.2" stroke="#4285f4" stroke-width="1.2"/>
-                  <line x1="2" y1="6.5" x2="14" y2="6.5" stroke="#4285f4" stroke-width="1.2"/>
-                  <line x1="5.5" y1="1.5" x2="5.5" y2="5" stroke="#4285f4" stroke-width="1.4" stroke-linecap="round"/>
-                  <line x1="10.5" y1="1.5" x2="10.5" y2="5" stroke="#4285f4" stroke-width="1.4" stroke-linecap="round"/>
-                  <rect x="5" y="8.5" width="2.5" height="2" rx=".4" fill="#4285f4"/>
-                  <rect x="8.5" y="8.5" width="2.5" height="2" rx=".4" fill="#4285f4" opacity=".5"/>
-                  <rect x="5" y="11" width="2.5" height="1.5" rx=".4" fill="#4285f4" opacity=".3"/>
-                </svg>
-              </span>
-              Google Calendar API
-            </span>
-            <span class="skill-tag" style="--ic:#a78bfa;--ic-dim:rgba(167,139,250,0.15)">
-              <span class="skill-icon" style="--ic:#a78bfa;--ic-dim:rgba(167,139,250,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="3" cy="8" r="2" stroke="#a78bfa" stroke-width="1.2"/>
-                  <circle cx="13" cy="8" r="2" stroke="#a78bfa" stroke-width="1.2"/>
-                  <line x1="5" y1="8" x2="11" y2="8" stroke="#a78bfa" stroke-width="1.2"/>
-                  <circle cx="8" cy="4.5" r="1.4" fill="#a78bfa" opacity=".7"/>
-                  <line x1="8" y1="5.9" x2="8" y2="6.8" stroke="#a78bfa" stroke-width="1.1"/>
-                </svg>
-              </span>
-              TCP / Sockets
-            </span>
-            <span class="skill-tag" style="--ic:#fbbf24;--ic-dim:rgba(251,191,36,0.15)">
-              <span class="skill-icon" style="--ic:#fbbf24;--ic-dim:rgba(251,191,36,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 2C4.3 2 4 3 4 4.2V5.8c0 .9-.8 1.4-2 1.7C3.2 7.9 4 8.4 4 9.3v1.5C4 12 4.3 14 6 14" stroke="#fbbf24" stroke-width="1.3" stroke-linecap="round"/>
-                  <path d="M10 2c1.7 0 2 1 2 2.2v1.6c0 .9.8 1.4 2 1.7-1.2.4-2 .9-2 1.8v1.5C12 12 11.7 14 10 14" stroke="#fbbf24" stroke-width="1.3" stroke-linecap="round"/>
-                </svg>
-              </span>
-              JSON
-            </span>
-            <span class="skill-tag" style="--ic:#f97316;--ic-dim:rgba(249,115,22,0.15)">
-              <span class="skill-icon" style="--ic:#f97316;--ic-dim:rgba(249,115,22,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="2" y1="4" x2="10" y2="4" stroke="#f97316" stroke-width="1.3" stroke-linecap="round"/>
-                  <polyline points="9,2.5 11,4 9,5.5" stroke="#f97316" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                  <line x1="2" y1="8" x2="10" y2="8" stroke="#f97316" stroke-width="1.3" stroke-linecap="round"/>
-                  <polyline points="9,6.5 11,8 9,9.5" stroke="#f97316" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                  <line x1="2" y1="12" x2="10" y2="12" stroke="#f97316" stroke-width="1.3" stroke-linecap="round"/>
-                  <polyline points="9,10.5 11,12 9,13.5" stroke="#f97316" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              Multithreading
-            </span>
-            <span class="skill-tag" style="--ic:#94a3b8;--ic-dim:rgba(148,163,184,0.15)">
-              <span class="skill-icon" style="--ic:#94a3b8;--ic-dim:rgba(148,163,184,0.15)">
-                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="8" cy="4" rx="3" ry="2.8" fill="#94a3b8"/>
-                  <ellipse cx="8" cy="10" rx="3.5" ry="4.2" fill="#94a3b8"/>
-                  <ellipse cx="8" cy="10" rx="2" ry="3" fill="#080b10" opacity=".6"/>
-                  <circle cx="6.8" cy="3.5" r=".5" fill="#080b10"/>
-                  <circle cx="9.2" cy="3.5" r=".5" fill="#080b10"/>
-                  <path d="M7.3 4.8h1.4l-.7.7z" fill="#f97316"/>
-                  <line x1="5.5" y1="13" x2="4.3" y2="15" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
-                  <line x1="10.5" y1="13" x2="11.7" y2="15" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
-                </svg>
-              </span>
-              Linux CLI
-            </span>
-          </div>
-        </div>
-        <!-- Version Control & Collaboration Group -->
-        <div class="skill-group reveal">
-          <div class="skill-group-title">Version Control &amp; Collaboration</div>
-          <div class="skill-tags">
-            <span class="skill-tag" style="--ic:#f05033;--ic-dim:rgba(240,80,51,0.15)">
-              <span class="skill-icon" style="--ic:#f05033;--ic-dim:rgba(240,80,51,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="4.5" cy="3.5" r="1.7" stroke="#f05033" stroke-width="1.2"/>
-                  <circle cx="4.5" cy="12.5" r="1.7" stroke="#f05033" stroke-width="1.2"/>
-                  <circle cx="11.5" cy="7" r="1.7" stroke="#f05033" stroke-width="1.2"/>
-                  <line x1="4.5" y1="5.2" x2="4.5" y2="10.8" stroke="#f05033" stroke-width="1.2"/>
-                  <path d="M4.5 6C4.5 7.5 11.5 7 11.5 7" stroke="#f05033" stroke-width="1.2" fill="none"/>
-                </svg>
-              </span>
-              Git
-            </span>
-            <span class="skill-tag" style="--ic:#c9d1d9;--ic-dim:rgba(201,209,217,0.12)">
-              <span class="skill-icon" style="--ic:#c9d1d9;--ic-dim:rgba(201,209,217,0.12)">
-                <svg viewBox="0 0 16 16" fill="#c9d1d9" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 .5A7.5 7.5 0 0 0 .5 8c0 3.31 2.15 6.12 5.13 7.11.37.07.5-.16.5-.36v-1.26c-2.06.45-2.49-1.34-2.49-1.34-.34-.87-.83-1.1-.83-1.1-.68-.46.05-.45.05-.45.75.05 1.15.77 1.15.77.67 1.15 1.76.82 2.19.63.07-.49.26-.82.47-1.01-1.67-.19-3.43-.84-3.43-3.71 0-.82.29-1.49.77-2.02-.08-.19-.33-.95.07-1.98 0 0 .63-.2 2.06.77A7.15 7.15 0 0 1 8 4.84c.64 0 1.28.08 1.88.24 1.42-.97 2.05-.77 2.05-.77.4 1.03.15 1.79.07 1.98.48.53.77 1.2.77 2.02 0 2.88-1.76 3.52-3.44 3.7.27.24.51.7.51 1.4v2.08c0 .2.13.44.51.36A7.5 7.5 0 0 0 15.5 8 7.5 7.5 0 0 0 8 .5z"/>
-                </svg>
-              </span>
-              GitHub
-            </span>
-            <span class="skill-tag" style="--ic:#e8c84a;--ic-dim:rgba(232,200,74,0.15)">
-              <span class="skill-icon" style="--ic:#e8c84a;--ic-dim:rgba(232,200,74,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="#e8c84a" stroke-width="1.2"/>
-                  <rect x="4" y="4.5" width="3" height="2.8" rx=".6" fill="#e8c84a" opacity=".9"/>
-                  <rect x="9" y="4.5" width="3" height="2.8" rx=".6" fill="#e8c84a" opacity=".5"/>
-                  <rect x="4" y="9" width="3" height="2" rx=".6" fill="#e8c84a" opacity=".4"/>
-                  <rect x="9" y="9" width="3" height="2" rx=".6" fill="#e8c84a" opacity=".75"/>
-                </svg>
-              </span>
-              Miro
-            </span>
-            <span class="skill-tag" style="--ic:#60a5fa;--ic-dim:rgba(96,165,250,0.15)">
-              <span class="skill-icon" style="--ic:#60a5fa;--ic-dim:rgba(96,165,250,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.5 8A5.5 5.5 0 0 0 4 4.5" stroke="#60a5fa" stroke-width="1.3" stroke-linecap="round"/>
-                  <polyline points="2.2,3.5 4,4.5 4.2,2.5" stroke="#60a5fa" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M2.5 8a5.5 5.5 0 0 0 9.5 3.5" stroke="#60a5fa" stroke-width="1.3" stroke-linecap="round"/>
-                  <polyline points="13.8,12.5 12,11.5 11.8,13.5" stroke="#60a5fa" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              Agile / Scrum
-            </span>
-          </div>
-        </div>
-        <!-- Development Practices Group -->
-        <div class="skill-group reveal">
-          <div class="skill-group-title">Development Practices</div>
-          <div class="skill-tags">
-            <span class="skill-tag" style="--ic:#34d399;--ic-dim:rgba(52,211,153,0.15)">
-              <span class="skill-icon" style="--ic:#34d399;--ic-dim:rgba(52,211,153,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 2v4.5L3 11c-.5 1 .2 2.5 1.5 2.5h7c1.3 0 2-1.5 1.5-2.5L10 6.5V2" stroke="#34d399" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                  <line x1="5.5" y1="2" x2="10.5" y2="2" stroke="#34d399" stroke-width="1.3" stroke-linecap="round"/>
-                  <path d="M6 9.5l1.5 1.5 3-3" stroke="#34d399" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              TDD
-            </span>
-            <span class="skill-tag" style="--ic:#c084fc;--ic-dim:rgba(192,132,252,0.15)">
-              <span class="skill-icon" style="--ic:#c084fc;--ic-dim:rgba(192,132,252,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="5.5" y="1" width="5" height="3" rx=".8" stroke="#c084fc" stroke-width="1.2"/>
-                  <rect x="1" y="11.5" width="4.5" height="3" rx=".8" stroke="#c084fc" stroke-width="1.2"/>
-                  <rect x="10.5" y="11.5" width="4.5" height="3" rx=".8" stroke="#c084fc" stroke-width="1.2"/>
-                  <line x1="8" y1="4" x2="8" y2="7" stroke="#c084fc" stroke-width="1.1"/>
-                  <line x1="3.25" y1="7" x2="12.75" y2="7" stroke="#c084fc" stroke-width="1.1"/>
-                  <line x1="3.25" y1="7" x2="3.25" y2="11.5" stroke="#c084fc" stroke-width="1.1"/>
-                  <line x1="12.75" y1="7" x2="12.75" y2="11.5" stroke="#c084fc" stroke-width="1.1"/>
-                </svg>
-              </span>
-              OOP
-            </span>
-            <span class="skill-tag" style="--ic:#22d3ee;--ic-dim:rgba(34,211,238,0.15)">
-              <span class="skill-icon" style="--ic:#22d3ee;--ic-dim:rgba(34,211,238,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="8" cy="8" r="6.5" stroke="#22d3ee" stroke-width="1.1"/>
-                  <circle cx="8" cy="8" r="4.2" stroke="#22d3ee" stroke-width="1.1"/>
-                  <circle cx="8" cy="8" r="2" stroke="#22d3ee" stroke-width="1.1"/>
-                  <circle cx="8" cy="8" r=".7" fill="#22d3ee"/>
-                </svg>
-              </span>
-              Clean Architecture
-            </span>
-            <span class="skill-tag" style="--ic:#fb923c;--ic-dim:rgba(251,146,60,0.15)">
-              <span class="skill-icon" style="--ic:#fb923c;--ic-dim:rgba(251,146,60,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="2" y1="5.5" x2="10" y2="5.5" stroke="#fb923c" stroke-width="1.4" stroke-linecap="round"/>
-                  <polyline points="9,3.5 11,5.5 9,7.5" stroke="#fb923c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                  <line x1="14" y1="10.5" x2="6" y2="10.5" stroke="#fb923c" stroke-width="1.4" stroke-linecap="round"/>
-                  <polyline points="7,8.5 5,10.5 7,12.5" stroke="#fb923c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              Concurrency Design
-            </span>
-            <span class="skill-tag" style="--ic:#818cf8;--ic-dim:rgba(129,140,248,0.15)">
-              <span class="skill-icon" style="--ic:#818cf8;--ic-dim:rgba(129,140,248,0.15)">
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1" y="4" width="4" height="3" rx=".6" stroke="#818cf8" stroke-width="1.2"/>
-                  <rect x="11" y="4" width="4" height="3" rx=".6" stroke="#818cf8" stroke-width="1.2"/>
-                  <rect x="1" y="9" width="4" height="3" rx=".6" stroke="#818cf8" stroke-width="1.2"/>
-                  <rect x="11" y="9" width="4" height="3" rx=".6" stroke="#818cf8" stroke-width="1.2"/>
-                  <line x1="5" y1="5.5" x2="11" y2="5.5" stroke="#818cf8" stroke-width="1.1"/>
-                  <polyline points="9.5,4.5 11,5.5 9.5,6.5" stroke="#818cf8" stroke-width="1.1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                  <line x1="11" y1="10.5" x2="5" y2="10.5" stroke="#818cf8" stroke-width="1.1"/>
-                  <polyline points="6.5,9.5 5,10.5 6.5,11.5" stroke="#818cf8" stroke-width="1.1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              Protocol Design
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS SECTION
-  <section id="projects">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-label">Projects</p>
-        <h2 class="display-lg">What I've Built</h2>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card reveal">
-          <div class="project-header">
-            <div class="project-number">Project 01</div>
-            <div class="project-name">Coding Clinic Booking System</div>
-            <div class="project-tech-row">
-              <span class="tech-badge">Python</span>
-              <span class="tech-badge">Google Calendar API</span>
-              <span class="tech-badge">JSON</span>
-              <span class="tech-badge">Git</span>
-              <span class="tech-badge">Linux CLI</span>
+            <!-- mobile topbar (shows only on small screens) -->
+            <div class="mobile-topbar">
+                <span class="m-name">Kabelo Rabalao</span>
+                <span class="status-pill" style="padding:4px 10px;"><span class="status-dot"></span> Open</span>
             </div>
-          </div>
-          <div class="project-body">
-            <ul class="project-achievements">
-              <li>Built a CLI tool that syncs Google Calendar with a local JSON cache, cutting API calls through a 7-day expiry strategy and hidden config storage.</li>
-              <li>Implemented double-booking prevention for students and volunteers using atomic updates applied to both local and remote calendar state simultaneously.</li>
-              <li>Delivered 6 command modules &mdash; <code>book</code>, <code>cancel</code>, <code>view</code> &mdash; with Linux-compatible output piping and integrated help documentation.</li>
-              <li>Collaborated in a 5-person Agile team using Git and Miro, maintaining a cadence of shipping working software every week.</li>
-            </ul>
-          </div>
-        </div>
-  </section>
+            <nav class="mobile-nav" id="mobile-nav">
+                <a href="#about">01 About</a>
+                <a href="#education">02 Education</a>
+                <a href="#skills">03 Skills</a>
+                <a href="#projects">04 Projects</a>
+                <a href="#contact">05 Contact</a>
+            </nav>
 
-  <section id="projects">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-label">Projects</p>
-        <h2 class="display-lg">What I've Built</h2>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card reveal">
-          <div class="project-header">
-            <div class="project-number">Project 01</div>
-            <div class="project-name">Fandom TUI</div>
-            <div class="project-tech-row">
-              <span class="tech-badge">Java</span>
-              <span class="tech-badge">Laterna</span>
-              <span class="tech-badge">JSON</span>
-              <span class="tech-badge">Git</span>
-              <span class="tech-badge">Linux CLI</span>
-            </div>
-          </div>
-          <div class="project-body">
-            <ul class="project-achievements">
-              <li>Built a CLI tool that syncs Google Calendar with a local JSON cache, cutting API calls through a 7-day expiry strategy and hidden config storage.</li>
-              <li>Implemented double-booking prevention for students and volunteers using atomic updates applied to both local and remote calendar state simultaneously.</li>
-              <li>Delivered 6 command modules &mdash; <code>book</code>, <code>cancel</code>, <code>view</code> &mdash; with Linux-compatible output piping and integrated help documentation.</li>
-              <li>Collaborated in a 5-person Agile team using Git and Miro, maintaining a cadence of shipping working software every week.</li>
-            </ul>
-          </div>
-        </div>
-  -->
-  <!-- CONTACT SECTION -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-inner reveal">
-        <p class="section-label" style="justify-content:center;">Contact</p>
-        <h2 class="display-lg">Let's Work Together</h2>
-        <p>I'm actively looking for internship and junior engineering opportunities where I can contribute to meaningful systems &mdash; and keep learning fast. Don't hesitate to reach out.</p>
-        <div class="contact-links">
-          <a href="mailto:kabelorabalao.dev@outlook.com" class="contact-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            kabelorabalao.dev@outlook.com
-          </a>
-          <a href="https://www.linkedin.com/in/kabelo-rabalao-576933277/" class="contact-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://github.com/anti00noir" class="contact-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
-          </a>
-        </div>
-      </div>
+            <!-- ================= HERO ================= -->
+            <section id="hero">
+                <div class="container">
+                    <div class="eyebrow"><span class="num">Field Notes</span> — Entry No. 001</div>
+                    <div class="hero-grid">
+                        <div class="hero-text">
+                            <h2 class="hero-name">Building <em class="accent">systems</em><br/>worth trusting.</h2>
+                            <p class="hero-summary">I engineer robust systems from the ground up — multithreaded servers, CLI tooling, and collaborative software that ships. Passionate about clean architecture, concurrency challenges, and the intersection of game design with low-level systems programming.</p>
+                            <div class="hero-cta">
+                                <a href="mailto:kabelorabalao.dev@outlook.com" class="btn btn-primary">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                    Get in touch
+                                </a>
+                                <a href="#projects" class="btn btn-outline">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                    View projects
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hero-visual">
+                            <div class="index-card">
+                                <span class="tape"></span>
+                                <div class="index-card-head"><span>Catalog Card</span><span>No. 001</span></div>
+                                <div class="index-row"><span class="k">Subject</span><span class="v">K. Rabalao</span></div>
+                                <div class="index-row"><span class="k">Class</span><span class="v">Systems / Games</span></div>
+                                <div class="index-row"><span class="k">Origin</span><span class="v">Johannesburg, ZA</span></div>
+                                <div class="index-row"><span class="k">Status</span><span class="v">In Progress</span></div>
+                                <div class="index-row"><span class="k">Filed under</span><span class="v">WeThinkCode_</span></div>
+                                <div class="stamp-approved">APPROVED</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container"><div class="tear"></div></div>
+
+            <!-- ================= ABOUT ================= -->
+            <section id="about">
+                <div class="container">
+                    <div class="eyebrow"><span class="num">01</span> About</div>
+                    <div class="about-grid">
+                        <div class="about-text reveal">
+                            <div class="section-head">
+                                <h2>Building things<br/>that <em>matter</em></h2>
+                            </div>
+                            <p>I'm a software engineering student with a deep focus on systems-level programming and game development. I thrive in environments where performance, correctness, and collaboration intersect.</p>
+                            <p>My work spans backend infrastructure, CLI tooling, and protocol design. I care about code that is readable, testable, and built to last — not just code that runs.</p>
+                        </div>
+                        <div class="stats reveal">
+                            <div class="stat-stamp"><div class="stat-number">2</div><div class="stat-label">Shipped projects</div></div>
+                            <div class="stat-stamp"><div class="stat-number">20+</div><div class="stat-label">Concurrent clients handled</div></div>
+                            <div class="stat-stamp"><div class="stat-number">5</div><div class="stat-label">Agile team size</div></div>
+                            <div class="stat-stamp"><div class="stat-number">6</div><div class="stat-label">CLI command modules</div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container"><div class="tear"></div></div>
+
+            <!-- ================= EDUCATION ================= -->
+            <section id="education">
+                <div class="container">
+                    <div class="eyebrow"><span class="num">02</span> Education</div>
+                    <div class="section-head reveal">
+                        <h2>Academic <em>Foundation</em></h2>
+                    </div>
+                    <div class="edu-ticket reveal">
+                        <div class="edu-main">
+                            <div class="edu-degree">Diploma in Software Engineering (NQF6)</div>
+                            <div class="edu-institution">WeThinkCode_ — Johannesburg, South Africa</div>
+                        </div>
+                        <div class="edu-divider"></div>
+                        <div class="edu-meta">
+                            <span class="pill">In Progress</span>
+                            <span class="pill">Full-Time</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container"><div class="tear"></div></div>
+
+            <!-- ================= SKILLS ================= -->
+            <section id="skills">
+                <div class="container">
+                    <div class="eyebrow"><span class="num">03</span> Skills</div>
+                    <div class="section-head reveal">
+                        <h2>My <em>Toolkit</em></h2>
+                    </div>
+                    <div class="skills-grid">
+
+                        <div class="skill-group reveal">
+                            <div class="skill-group-title">Languages</div>
+                            <div class="skill-tags">
+                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Python</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Java</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>C</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>SQL</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Bash / Shell</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-group reveal">
+                            <div class="skill-group-title">Frameworks &amp; Tools</div>
+                            <div class="skill-tags">
+                                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Google Calendar API</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>TCP / Sockets</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>JSON</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Multithreading</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Linux CLI</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-group reveal">
+                            <div class="skill-group-title">Version Control &amp; Collaboration</div>
+                            <div class="skill-tags">
+                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Git</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>GitHub</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>Miro</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Agile / Scrum</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-group reveal">
+                            <div class="skill-group-title">Development Practices</div>
+                            <div class="skill-tags">
+                                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>TDD</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>OOP</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>Clean Architecture</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Concurrency Design</span>
+                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Protocol Design</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <div class="container"><div class="tear"></div></div>
+
+            <!-- ================= PROJECTS ================= -->
+            <section id="projects">
+                <div class="container">
+                    <div class="eyebrow"><span class="num">04</span> Projects</div>
+                    <div class="section-head reveal">
+                        <h2>What I've <em>Built</em></h2>
+                    </div>
+
+                    <div class="projects-stack">
+
+                        <div class="project-index-card reveal">
+                            <span class="tape"></span>
+                            <div class="project-header">
+                                <div>
+                                    <div class="project-number">Project 01</div>
+                                    <div class="project-name">Coding Clinic Booking System</div>
+                                </div>
+                                <div class="project-tech-row">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Google Calendar API</span>
+                                    <span class="tech-badge">JSON</span>
+                                    <span class="tech-badge">Git</span>
+                                    <span class="tech-badge">Linux CLI</span>
+                                </div>
+                            </div>
+                            <ul class="project-achievements">
+                                <li>Built a CLI tool that syncs Google Calendar with a local JSON cache, cutting API calls through a 7-day expiry strategy and hidden config storage.</li>
+                                <li>Implemented double-booking prevention for students and volunteers using atomic updates applied to both local and remote calendar state simultaneously.</li>
+                                <li>Delivered 6 command modules — <code>book</code>, <code>cancel</code>, <code>view</code> — with Linux-compatible output piping and integrated help documentation.</li>
+                                <li>Collaborated in a 5-person Agile team using Git and Miro, maintaining a cadence of shipping working software every week.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-index-card reveal">
+                            <span class="tape"></span>
+                            <div class="project-header">
+                                <div>
+                                    <div class="project-number">Project 02</div>
+                                    <div class="project-name">Fandom TUI</div>
+                                </div>
+                                <div class="project-tech-row">
+                                    <span class="tech-badge">Java</span>
+                                    <span class="tech-badge">Lanterna</span>
+                                    <span class="tech-badge">JSON</span>
+                                    <span class="tech-badge">Git</span>
+                                    <span class="tech-badge">Linux CLI</span>
+                                </div>
+                            </div>
+                            <ul class="project-achievements">
+                                <li>Designed a component-based terminal UI with Java and Lanterna for browsing fandom wiki entries entirely by keyboard, no mouse required.</li>
+                                <li>Built a local JSON cache layer that persists fetched entries between sessions, keeping the app usable offline and cutting repeat network calls.</li>
+                                <li>Structured the app around a clean MVC-style split, separating rendering, input handling, and data fetching so each layer could be tested independently.</li>
+                                <li>Collaborated in a 5-person Agile team using Git and Miro, shipping incremental features on a weekly sprint cadence.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <div class="container"><div class="tear"></div></div>
+
+            <!-- ================= CONTACT ================= -->
+            <section id="contact">
+                <div class="container">
+                    <div class="eyebrow" style="justify-content:center;"><span class="num">05</span> Contact</div>
+                    <div class="postcard reveal">
+                        <h2>Let's Work Together</h2>
+                        <p>I'm actively looking for internship and junior engineering opportunities where I can contribute to meaningful systems — and keep learning fast. Don't hesitate to reach out.</p>
+                        <div class="contact-links">
+                            <a href="mailto:kabelorabalao.dev@outlook.com" class="contact-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                kabelorabalao.dev@outlook.com
+                            </a>
+                            <a href="https://www.linkedin.com/in/kabelo-rabalao-576933277/" class="contact-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/anti00noir" class="contact-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <p>Designed &amp; built by <span>Kabelo Rabalao</span> — &copy; <span id="year"></span></p>
+            </footer>
+
+        </main>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Designed &amp; built by <span>Kabelo Rabalao</span> &mdash; &copy; <span id="year"></span></p>
-  </footer>
-
-  <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
