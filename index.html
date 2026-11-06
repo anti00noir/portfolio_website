@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kabelo Rabalao — Software Engineer</title>
+    <title>Kabelo Rabalao — Software Engineering Student</title>
+    <meta name="theme-color" content="#e6e0d4" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- Open Graph / Twitter — og:url + og:image TODO once final domain is live -->
+    <meta property="og:title" content="Kabelo Rabalao — Software Engineering Student" />
+    <meta property="og:description" content="Portfolio of Kabelo Rabalao, Software Engineering Student specialising in Game & Systems Development." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
     <meta name="description" content="Portfolio of Kabelo Rabalao, Software Engineering Student specialising in Game & Systems Development." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,6 +19,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kabelo Rabalao",
+      "jobTitle": "Software Engineering Student",
+      "email": "mailto:kabelorabalao.dev@outlook.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Johannesburg",
+        "addressRegion": "Gauteng",
+        "addressCountry": "ZA"
+      },
+      "alumniOf": { "@type": "Organization", "name": "WeThinkCode_" },
+      "sameAs": [
+        "https://www.linkedin.com/in/kabelo-rabalao-576933277/",
+        "https://github.com/anti00noir"
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -60,10 +89,10 @@
                     <a href="mailto:kabelorabalao.dev@outlook.com" aria-label="Email">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/kabelo-rabalao-576933277/" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/kabelo-rabalao-576933277/" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                     </a>
-                    <a href="https://github.com/anti00noir" aria-label="GitHub">
+                    <a href="https://github.com/anti00noir" target="_blank" rel="noopener" aria-label="GitHub">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                     </a>
                 </div>
@@ -105,6 +134,10 @@
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                                     View projects
                                 </a>
+                                <a href="Kabelo-Rabalao-CV.pdf" class="btn btn-outline" download>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                    Download CV
+                                </a>
                             </div>
                         </div>
 
@@ -138,12 +171,6 @@
                             <p>I'm a software engineering student with a deep focus on systems-level programming and game development. I thrive in environments where performance, correctness, and collaboration intersect.</p>
                             <p>My work spans backend infrastructure, CLI tooling, and protocol design. I care about code that is readable, testable, and built to last — not just code that runs.</p>
                         </div>
-                        <div class="stats reveal">
-                            <div class="stat-stamp"><div class="stat-number">2</div><div class="stat-label">Shipped projects</div></div>
-                            <div class="stat-stamp"><div class="stat-number">20+</div><div class="stat-label">Concurrent clients handled</div></div>
-                            <div class="stat-stamp"><div class="stat-number">5</div><div class="stat-label">Agile team size</div></div>
-                            <div class="stat-stamp"><div class="stat-number">6</div><div class="stat-label">CLI command modules</div></div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -166,6 +193,7 @@
                         <div class="edu-meta">
                             <span class="pill">In Progress</span>
                             <span class="pill">Full-Time</span>
+                            <span class="pill">Expected 2027</span>
                         </div>
                     </div>
                 </div>
@@ -246,44 +274,22 @@
                             <div class="project-header">
                                 <div>
                                     <div class="project-number">Project 01</div>
-                                    <div class="project-name">Coding Clinic Booking System</div>
+                                    <div class="project-name"><a href="https://github.com/anti00noir/nookbin-browser-extension" target="_blank" rel="noopener">NookBin</a></div>
                                 </div>
                                 <div class="project-tech-row">
-                                    <span class="tech-badge">Python</span>
-                                    <span class="tech-badge">Google Calendar API</span>
-                                    <span class="tech-badge">JSON</span>
-                                    <span class="tech-badge">Git</span>
-                                    <span class="tech-badge">Linux CLI</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">Chrome Extension (MV3)</span>
+                                    <span class="tech-badge">IndexedDB</span>
+                                    <span class="tech-badge">Web APIs</span>
+                                    <span class="tech-badge">Node Test Runner</span>
+                                    <span class="tech-badge">Zero-dependency</span>
                                 </div>
                             </div>
                             <ul class="project-achievements">
-                                <li>Built a CLI tool that syncs Google Calendar with a local JSON cache, cutting API calls through a 7-day expiry strategy and hidden config storage.</li>
-                                <li>Implemented double-booking prevention for students and volunteers using atomic updates applied to both local and remote calendar state simultaneously.</li>
-                                <li>Delivered 6 command modules — <code>book</code>, <code>cancel</code>, <code>view</code> — with Linux-compatible output piping and integrated help documentation.</li>
-                                <li>Collaborated in a 5-person Agile team using Git and Miro, maintaining a cadence of shipping working software every week.</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-index-card reveal">
-                            <span class="tape"></span>
-                            <div class="project-header">
-                                <div>
-                                    <div class="project-number">Project 02</div>
-                                    <div class="project-name">Fandom TUI</div>
-                                </div>
-                                <div class="project-tech-row">
-                                    <span class="tech-badge">Java</span>
-                                    <span class="tech-badge">Lanterna</span>
-                                    <span class="tech-badge">JSON</span>
-                                    <span class="tech-badge">Git</span>
-                                    <span class="tech-badge">Linux CLI</span>
-                                </div>
-                            </div>
-                            <ul class="project-achievements">
-                                <li>Designed a component-based terminal UI with Java and Lanterna for browsing fandom wiki entries entirely by keyboard, no mouse required.</li>
-                                <li>Built a local JSON cache layer that persists fetched entries between sessions, keeping the app usable offline and cutting repeat network calls.</li>
-                                <li>Structured the app around a clean MVC-style split, separating rendering, input handling, and data fetching so each layer could be tested independently.</li>
-                                <li>Collaborated in a 5-person Agile team using Git and Miro, shipping incremental features on a weekly sprint cadence.</li>
+                                <li>Built a Manifest V3 Chrome extension that keeps frequently used documents in the extension popup and attaches them to a page's file input directly — no re-opening the file picker.</li>
+                                <li>Implemented a content script that finds the file input, injects the stored file, and fires the events upload widgets normally listen for, with a drag-and-drop simulation fallback.</li>
+                                <li>Added search, PDF/image filtering, and name/size sorting in a no-build, zero-runtime-dependency popup built with ES modules.</li>
+                                <li>Wrote unit tests with Node's built-in test runner and <code>fake-indexeddb</code> covering the IndexedDB storage wrapper.</li>
                             </ul>
                         </div>
 
@@ -305,13 +311,17 @@
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                                 kabelorabalao.dev@outlook.com
                             </a>
-                            <a href="https://www.linkedin.com/in/kabelo-rabalao-576933277/" class="contact-link">
+                            <a href="https://www.linkedin.com/in/kabelo-rabalao-576933277/" target="_blank" rel="noopener" class="contact-link">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                                 LinkedIn
                             </a>
-                            <a href="https://github.com/anti00noir" class="contact-link">
+                            <a href="https://github.com/anti00noir" target="_blank" rel="noopener" class="contact-link">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                                 GitHub
+                            </a>
+                            <a href="Kabelo-Rabalao-CV.pdf" class="contact-link" download>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                CV (PDF)
                             </a>
                         </div>
                     </div>
@@ -325,6 +335,5 @@
         </main>
     </div>
 
-    <script src="js/main.js"></script>
 </body>
 </html>

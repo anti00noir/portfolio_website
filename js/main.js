@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Scrollspy for both sidebar nav and mobile nav
