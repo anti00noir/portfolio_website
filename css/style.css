@@ -157,11 +157,11 @@ a:focus-visible, button:focus-visible{
   border-radius:50%;
   border:1.5px solid var(--olive);
   display:flex; align-items:center; justify-content:center;
-  font-family:var(--f-mono); font-weight:700; font-size:13px;
   color:var(--olive);
   margin-bottom:26px;
   flex:none;
 }
+.brandmark img{ display:block; }
 
 .side-name{
   font-size:clamp(30px,2.6vw,36px);
