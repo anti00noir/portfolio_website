@@ -43,26 +43,17 @@
 </head>
 <body>
 
-    <div class="layout">
-
-        <!-- ============================================================
-             SIDEBAR (desktop nav / identity rail)
-             ============================================================ -->
-        <aside class="sidebar" id="sidebar">
-            <div class="brandmark"><img src="assets/meraw-persona.svg" alt="" width="20" height="34"></div>
-
-            <h1 class="side-name">Kabelo<br/>Rabalao</h1>
-            <p class="side-tagline">Software Engineering Student — Game &amp; Systems Dev</p>
-
-            <p class="side-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Johannesburg, Gauteng
-            </p>
-
-            <div class="status-pill"><span class="status-dot"></span> Available for opportunities</div>
-
-            <nav>
-                <ul class="side-nav" id="side-nav">
+    <!-- ============================================================
+         TOPBAR (single nav for all breakpoints)
+         ============================================================ -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="top-brand" href="#hero">
+                <span class="brandmark"><img src="assets/meraw-persona.svg" alt="" width="20" height="34"></span>
+                <span class="top-name">Kabelo Rabalao</span>
+            </a>
+            <nav aria-label="Sections">
+                <ul class="top-nav" id="site-nav">
                     <li><a href="#about"><span class="n">01</span> About</a></li>
                     <li><a href="#education"><span class="n">02</span> Education</a></li>
                     <li><a href="#skills"><span class="n">03</span> Skills</a></li>
@@ -70,274 +61,200 @@
                     <li><a href="#contact"><span class="n">05</span> Contact</a></li>
                 </ul>
             </nav>
+            <a href="Kabelo-Rabalao-CV.pdf" class="top-cv" download>Download CV</a>
+        </div>
+    </header>
 
-            <div class="side-bottom">
-                <div class="stamp-wrap">
-                    <svg class="stamp-badge" viewBox="0 0 160 160" width="118" height="118" aria-hidden="true">
-                        <defs>
-                            <path id="stampCircle" d="M80,80 m-60,0 a60,60 0 1,1 120,0 a60,60 0 1,1 -120,0" />
-                        </defs>
-                        <circle cx="80" cy="80" r="76" fill="none" stroke="#385600" stroke-width="1" stroke-dasharray="1.5 4" opacity=".6"/>
-                        <circle cx="80" cy="80" r="60" fill="none" stroke="#385600" stroke-width="1.4"/>
-                        <text font-family="'Space Mono', monospace" font-size="8.6" letter-spacing="2.2" fill="#385600">
-                            <textPath href="#stampCircle" startOffset="2%">SYSTEMS ENGINEER • GAME DEVELOPER •</textPath>
-                        </text>
-                        <text x="80" y="88" text-anchor="middle" font-family="'Fraunces', serif" font-weight="700" font-size="26" fill="#a73330">KR</text>
-                    </svg>
-                </div>
-                <div class="side-social">
-                    <a href="mailto:kabelorabalao.dev@outlook.com" aria-label="Email">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/kabelo-rabalao-576933277/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                    </a>
-                    <a href="https://github.com/anti00noir" target="_blank" rel="noopener" aria-label="GitHub">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    </a>
-                </div>
+    <!-- ============================================================
+         BENTO GRID — "Field Archive" tiles
+         ============================================================ -->
+    <main class="bento" id="top">
+
+        <!-- ================= HERO ================= -->
+        <section class="tile tile-hero reveal" data-section="hero">
+            <div class="eyebrow"><span class="num">Field Notes</span> — Entry No. 001</div>
+            <h2 class="hero-name">Building <em class="accent">systems</em><br/>worth trusting.</h2>
+            <p class="hero-summary">I engineer robust systems from the ground up — multithreaded servers, CLI tooling, and collaborative software that ships. Passionate about clean architecture, concurrency challenges, and the intersection of game design with low-level systems programming.</p>
+            <div class="hero-meta">
+                <div class="status-pill"><span class="status-dot"></span> Available for opportunities</div>
+                <p class="side-location">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Johannesburg, Gauteng
+                </p>
+            </div>
+            <div class="hero-cta">
+                <a href="mailto:kabelorabalao.dev@outlook.com" class="btn btn-primary">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Get in touch
+                </a>
+                <a href="#projects" class="btn btn-outline">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    View projects
+                </a>
+                <a href="Kabelo-Rabalao-CV.pdf" class="btn btn-outline" download>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download CV
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= STATUS / CATALOG CARD ================= -->
+        <aside class="tile tile-status reveal" data-section="hero" aria-label="Portfolio at a glance">
+            <div class="index-card">
+                <span class="tape"></span>
+                <div class="index-card-head"><span>Catalog Card</span><span>No. 001</span></div>
+                <div class="index-row"><span class="k">Subject</span><span class="v">K. Rabalao</span></div>
+                <div class="index-row"><span class="k">Class</span><span class="v">Systems / Games</span></div>
+                <div class="index-row"><span class="k">Origin</span><span class="v">Johannesburg, ZA</span></div>
+                <div class="index-row"><span class="k">Status</span><span class="v">In Progress</span></div>
+                <div class="index-row"><span class="k">Filed under</span><span class="v">WeThinkCode_</span></div>
+                <div class="stamp-approved">APPROVED</div>
             </div>
         </aside>
 
-        <!-- ============================================================
-             MAIN
-             ============================================================ -->
-        <main class="main">
+        <!-- ================= ABOUT ================= -->
+        <section class="tile tile-about reveal" id="about" data-section="about">
+            <div class="eyebrow"><span class="num">01</span> About</div>
+            <h2 class="tile-title">Building things<br/>that <em>matter</em></h2>
+            <p>I'm a software engineering student with a deep focus on systems-level programming and game development. I thrive in environments where performance, correctness, and collaboration intersect.</p>
+            <p>My work spans backend infrastructure, CLI tooling, and protocol design. I care about code that is readable, testable, and built to last — not just code that runs.</p>
+        </section>
 
-            <!-- mobile topbar (shows only on small screens) -->
-            <div class="mobile-topbar">
-                <span class="m-name">Kabelo Rabalao</span>
-                <span class="status-pill" style="padding:4px 10px;"><span class="status-dot"></span> Open</span>
+        <!-- ================= EDUCATION ================= -->
+        <section class="tile tile-education reveal tilt-l" id="education" data-section="education">
+            <div class="eyebrow"><span class="num">02</span> Education</div>
+            <div class="edu-flex">
+                <div class="edu-main">
+                    <div class="edu-degree">Diploma in Software Engineering (NQF6)</div>
+                    <div class="edu-institution">WeThinkCode_ — Johannesburg, South Africa</div>
+                </div>
+                <div class="edu-divider"></div>
+                <div class="edu-meta">
+                    <span class="pill">In Progress</span>
+                    <span class="pill">Full-Time</span>
+                    <span class="pill">Expected 2027</span>
+                </div>
             </div>
-            <nav class="mobile-nav" id="mobile-nav">
-                <a href="#about">01 About</a>
-                <a href="#education">02 Education</a>
-                <a href="#skills">03 Skills</a>
-                <a href="#projects">04 Projects</a>
-                <a href="#contact">05 Contact</a>
-            </nav>
+        </section>
 
-            <!-- ================= HERO ================= -->
-            <section id="hero">
-                <div class="container">
-                    <div class="eyebrow"><span class="num">Field Notes</span> — Entry No. 001</div>
-                    <div class="hero-grid">
-                        <div class="hero-text">
-                            <h2 class="hero-name">Building <em class="accent">systems</em><br/>worth trusting.</h2>
-                            <p class="hero-summary">I engineer robust systems from the ground up — multithreaded servers, CLI tooling, and collaborative software that ships. Passionate about clean architecture, concurrency challenges, and the intersection of game design with low-level systems programming.</p>
-                            <div class="hero-cta">
-                                <a href="mailto:kabelorabalao.dev@outlook.com" class="btn btn-primary">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                                    Get in touch
-                                </a>
-                                <a href="#projects" class="btn btn-outline">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                                    View projects
-                                </a>
-                                <a href="Kabelo-Rabalao-CV.pdf" class="btn btn-outline" download>
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                                    Download CV
-                                </a>
-                            </div>
-                        </div>
+        <!-- ================= SKILLS ================= -->
+        <section class="tile tile-skill reveal" id="skills" data-section="skills">
+            <div class="eyebrow"><span class="num">03</span> Languages</div>
+            <div class="skill-tags">
+                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Python</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Java</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>C</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>SQL</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Bash / Shell</span>
+            </div>
+        </section>
 
-                        <div class="hero-visual">
-                            <div class="index-card">
-                                <span class="tape"></span>
-                                <div class="index-card-head"><span>Catalog Card</span><span>No. 001</span></div>
-                                <div class="index-row"><span class="k">Subject</span><span class="v">K. Rabalao</span></div>
-                                <div class="index-row"><span class="k">Class</span><span class="v">Systems / Games</span></div>
-                                <div class="index-row"><span class="k">Origin</span><span class="v">Johannesburg, ZA</span></div>
-                                <div class="index-row"><span class="k">Status</span><span class="v">In Progress</span></div>
-                                <div class="index-row"><span class="k">Filed under</span><span class="v">WeThinkCode_</span></div>
-                                <div class="stamp-approved">APPROVED</div>
-                            </div>
-                        </div>
-                    </div>
+        <section class="tile tile-skill reveal tilt-r" data-section="skills">
+            <div class="eyebrow"><span class="num">03</span> Frameworks &amp; Tools</div>
+            <div class="skill-tags">
+                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Google Calendar API</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>TCP / Sockets</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>JSON</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Multithreading</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Linux CLI</span>
+            </div>
+        </section>
+
+        <section class="tile tile-skill reveal" data-section="skills">
+            <div class="eyebrow"><span class="num">03</span> Practices</div>
+            <div class="skill-tags">
+                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>TDD</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>OOP</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>Clean Architecture</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Concurrency Design</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Protocol Design</span>
+            </div>
+        </section>
+
+        <section class="tile tile-skill reveal tilt-l" data-section="skills">
+            <div class="eyebrow"><span class="num">03</span> Collaboration</div>
+            <div class="skill-tags">
+                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Git</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>GitHub</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>Miro</span>
+                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Agile / Scrum</span>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS ================= -->
+        <section class="tile tile-project reveal" id="projects" data-section="projects">
+            <span class="tape"></span>
+            <div class="project-header">
+                <div>
+                    <div class="project-number">Project 01</div>
+                    <div class="project-name"><a href="https://github.com/anti00noir/nookbin-browser-extension" target="_blank" rel="noopener">NookBin</a></div>
                 </div>
-            </section>
-
-            <div class="container"><div class="tear"></div></div>
-
-            <!-- ================= ABOUT ================= -->
-            <section id="about">
-                <div class="container">
-                    <div class="eyebrow"><span class="num">01</span> About</div>
-                    <div class="about-grid">
-                        <div class="about-text reveal">
-                            <div class="section-head">
-                                <h2>Building things<br/>that <em>matter</em></h2>
-                            </div>
-                            <p>I'm a software engineering student with a deep focus on systems-level programming and game development. I thrive in environments where performance, correctness, and collaboration intersect.</p>
-                            <p>My work spans backend infrastructure, CLI tooling, and protocol design. I care about code that is readable, testable, and built to last — not just code that runs.</p>
-                        </div>
-                    </div>
+                <div class="project-tech-row">
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Chrome Extension (MV3)</span>
+                    <span class="tech-badge">IndexedDB</span>
+                    <span class="tech-badge">Web APIs</span>
+                    <span class="tech-badge">Node Test Runner</span>
+                    <span class="tech-badge">Zero-dependency</span>
                 </div>
-            </section>
+            </div>
+            <figure class="project-media">
+                <img src="assets/nookbin-in-action.png" alt="NookBin popup open over a Gmail compose window, with a stored PDF attached to the message" width="1884" height="1005" loading="lazy">
+                <img src="assets/nookbin-popup.png" alt="NookBin popup library view showing stored PDFs with search, filters and sorting" width="931" height="1005" loading="lazy">
+            </figure>
+            <ul class="project-achievements">
+                <li>Built a Manifest V3 Chrome extension that keeps frequently used documents in the extension popup and attaches them to a page's file input directly — no re-opening the file picker.</li>
+                <li>Implemented a content script that finds the file input, injects the stored file, and fires the events upload widgets normally listen for, with a drag-and-drop simulation fallback.</li>
+                <li>Added search, PDF/image filtering, and name/size sorting in a no-build, zero-runtime-dependency popup built with ES modules.</li>
+                <li>Wrote unit tests with Node's built-in test runner and <code>fake-indexeddb</code> covering the IndexedDB storage wrapper.</li>
+            </ul>
+        </section>
 
-            <div class="container"><div class="tear"></div></div>
+        <!-- ================= CONTACT ================= -->
+        <section class="tile tile-contact reveal" id="contact" data-section="contact">
+            <div class="eyebrow eyebrow-center"><span class="num">05</span> Contact</div>
+            <h2 class="tile-title">Let's <em>Work Together</em></h2>
+            <p>I'm actively looking for internship and junior engineering opportunities where I can contribute to meaningful systems — and keep learning fast. Don't hesitate to reach out.</p>
+            <div class="contact-links">
+                <a href="mailto:kabelorabalao.dev@outlook.com" class="contact-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    kabelorabalao.dev@outlook.com
+                </a>
+                <a href="https://www.linkedin.com/in/kabelo-rabalao-576933277/" target="_blank" rel="noopener" class="contact-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/anti00noir" target="_blank" rel="noopener" class="contact-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    GitHub
+                </a>
+                <a href="Kabelo-Rabalao-CV.pdf" class="contact-link" download>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    CV (PDF)
+                </a>
+            </div>
+        </section>
 
-            <!-- ================= EDUCATION ================= -->
-            <section id="education">
-                <div class="container">
-                    <div class="eyebrow"><span class="num">02</span> Education</div>
-                    <div class="section-head reveal">
-                        <h2>Academic <em>Foundation</em></h2>
-                    </div>
-                    <div class="edu-ticket reveal">
-                        <div class="edu-main">
-                            <div class="edu-degree">Diploma in Software Engineering (NQF6)</div>
-                            <div class="edu-institution">WeThinkCode_ — Johannesburg, South Africa</div>
-                        </div>
-                        <div class="edu-divider"></div>
-                        <div class="edu-meta">
-                            <span class="pill">In Progress</span>
-                            <span class="pill">Full-Time</span>
-                            <span class="pill">Expected 2027</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <!-- ================= FOOTER TILE ================= -->
+        <footer class="tile tile-footer reveal">
+            <div class="stamp-wrap">
+                <svg class="stamp-badge" viewBox="0 0 160 160" width="112" height="112" aria-hidden="true">
+                    <defs>
+                        <path id="stampCircle" d="M80,80 m-60,0 a60,60 0 1,1 120,0 a60,60 0 1,1 -120,0" />
+                    </defs>
+                    <circle cx="80" cy="80" r="76" fill="none" stroke="#385600" stroke-width="1" stroke-dasharray="1.5 4" opacity=".6"/>
+                    <circle cx="80" cy="80" r="60" fill="none" stroke="#385600" stroke-width="1.4"/>
+                    <text font-family="'Space Mono', monospace" font-size="8.6" letter-spacing="2.2" fill="#385600">
+                        <textPath href="#stampCircle" startOffset="2%">SYSTEMS ENGINEER • GAME DEVELOPER •</textPath>
+                    </text>
+                    <text x="80" y="88" text-anchor="middle" font-family="'Fraunces', serif" font-weight="700" font-size="26" fill="#a73330">KR</text>
+                </svg>
+            </div>
+            <div class="status-pill foot-open"><span class="status-dot"></span> Open to opportunities</div>
+            <p class="foot-credit">Designed &amp; built by <span>Kabelo Rabalao</span> — &copy; <span id="year"></span></p>
+        </footer>
 
-            <div class="container"><div class="tear"></div></div>
-
-            <!-- ================= SKILLS ================= -->
-            <section id="skills">
-                <div class="container">
-                    <div class="eyebrow"><span class="num">03</span> Skills</div>
-                    <div class="section-head reveal">
-                        <h2>My <em>Toolkit</em></h2>
-                    </div>
-                    <div class="skills-grid">
-
-                        <div class="skill-group reveal">
-                            <div class="skill-group-title">Languages</div>
-                            <div class="skill-tags">
-                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Python</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Java</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>C</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>SQL</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Bash / Shell</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-group reveal">
-                            <div class="skill-group-title">Frameworks &amp; Tools</div>
-                            <div class="skill-tags">
-                                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Google Calendar API</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>TCP / Sockets</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>JSON</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Multithreading</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Linux CLI</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-group reveal">
-                            <div class="skill-group-title">Version Control &amp; Collaboration</div>
-                            <div class="skill-tags">
-                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Git</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>GitHub</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>Miro</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Agile / Scrum</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-group reveal">
-                            <div class="skill-group-title">Development Practices</div>
-                            <div class="skill-tags">
-                                <span class="skill-chip"><span class="dot" style="--dc:#ceab53"></span>TDD</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>OOP</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#c30005"></span>Clean Architecture</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#a73330"></span>Concurrency Design</span>
-                                <span class="skill-chip"><span class="dot" style="--dc:#385600"></span>Protocol Design</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <div class="container"><div class="tear"></div></div>
-
-            <!-- ================= PROJECTS ================= -->
-            <section id="projects">
-                <div class="container">
-                    <div class="eyebrow"><span class="num">04</span> Projects</div>
-                    <div class="section-head reveal">
-                        <h2>What I've <em>Built</em></h2>
-                    </div>
-
-                    <div class="projects-stack">
-
-                        <div class="project-index-card reveal">
-                            <span class="tape"></span>
-                            <div class="project-header">
-                                <div>
-                                    <div class="project-number">Project 01</div>
-                                    <div class="project-name"><a href="https://github.com/anti00noir/nookbin-browser-extension" target="_blank" rel="noopener">NookBin</a></div>
-                                </div>
-                                <div class="project-tech-row">
-                                    <span class="tech-badge">JavaScript</span>
-                                    <span class="tech-badge">Chrome Extension (MV3)</span>
-                                    <span class="tech-badge">IndexedDB</span>
-                                    <span class="tech-badge">Web APIs</span>
-                                    <span class="tech-badge">Node Test Runner</span>
-                                    <span class="tech-badge">Zero-dependency</span>
-                                </div>
-                            </div>
-                            <figure class="project-media">
-                                <img src="assets/nookbin-in-action.png" alt="NookBin popup open over a Gmail compose window, with a stored PDF attached to the message" width="1884" height="1005" loading="lazy">
-                                <img src="assets/nookbin-popup.png" alt="NookBin popup library view showing stored PDFs with search, filters and sorting" width="931" height="1005" loading="lazy">
-                            </figure>
-                            <ul class="project-achievements">
-                                <li>Built a Manifest V3 Chrome extension that keeps frequently used documents in the extension popup and attaches them to a page's file input directly — no re-opening the file picker.</li>
-                                <li>Implemented a content script that finds the file input, injects the stored file, and fires the events upload widgets normally listen for, with a drag-and-drop simulation fallback.</li>
-                                <li>Added search, PDF/image filtering, and name/size sorting in a no-build, zero-runtime-dependency popup built with ES modules.</li>
-                                <li>Wrote unit tests with Node's built-in test runner and <code>fake-indexeddb</code> covering the IndexedDB storage wrapper.</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <div class="container"><div class="tear"></div></div>
-
-            <!-- ================= CONTACT ================= -->
-            <section id="contact">
-                <div class="container">
-                    <div class="eyebrow" style="justify-content:center;"><span class="num">05</span> Contact</div>
-                    <div class="postcard reveal">
-                        <h2>Let's Work Together</h2>
-                        <p>I'm actively looking for internship and junior engineering opportunities where I can contribute to meaningful systems — and keep learning fast. Don't hesitate to reach out.</p>
-                        <div class="contact-links">
-                            <a href="mailto:kabelorabalao.dev@outlook.com" class="contact-link">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                                kabelorabalao.dev@outlook.com
-                            </a>
-                            <a href="https://www.linkedin.com/in/kabelo-rabalao-576933277/" target="_blank" rel="noopener" class="contact-link">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                                LinkedIn
-                            </a>
-                            <a href="https://github.com/anti00noir" target="_blank" rel="noopener" class="contact-link">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                GitHub
-                            </a>
-                            <a href="Kabelo-Rabalao-CV.pdf" class="contact-link" download>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                                CV (PDF)
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <footer>
-                <p>Designed &amp; built by <span>Kabelo Rabalao</span> — &copy; <span id="year"></span></p>
-            </footer>
-
-        </main>
-    </div>
+    </main>
 
 </body>
 </html>
